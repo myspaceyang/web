@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Animal(name,age,gender) {
+        this.name = name;
+        this.age=age;
+        this.gender=gender;
+    }
+    function Person(name,age,gender,say) {
+        // Animal.call(this,name, age, gender)
+        //等价于
+        Animal.apply(this,[name, age, gender]);
+        this.say=say;
+    }
+    var p1=new Person("宋小宝",18,"男",
+    function() {
+
+    });
+</script>
+</body>
+</html>

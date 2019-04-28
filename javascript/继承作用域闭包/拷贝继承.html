@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var o3={ ismale:"男" , age:18, name: "张三" };
+      var o4={};
+      for(var key in o3){
+        var value=o3[key];
+        o4[key]=value;
+      }
+      o4.name="李四";
+      console.log(o4);
+    </script>
+  </body>
+</html>
