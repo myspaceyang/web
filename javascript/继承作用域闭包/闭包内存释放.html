@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function f1() {
+        var a=5;
+        return function () {
+            a++;
+            console.log(a);
+        }
+    }
+    var q1=f1();
+    //要想释放q1中的保存的a,只能释放q1
+    q1=null;
+</script>
+</body>
+</html>
