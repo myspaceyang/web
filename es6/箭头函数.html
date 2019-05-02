@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //箭头函数就是用来替换匿名函数
+    //无参数的匿名函数
+    div.onclick=function () {
+
+    }
+    //相当于
+    div.onclick=()=>{
+
+    }
+
+    //有参数的匿名函数
+    var fn=function (name,age) {
+        console.log(name);
+    }
+    //相当于
+    var fn=(name,age)=>{
+        console.log(name);
+    }
+</script>
+</body>
+</html>

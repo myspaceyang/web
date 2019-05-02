@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var obj={name:"abc",age:18};
+    //用解构赋值的方式获取name,age
+    let {name} =obj;//创建了一个变量name,值为obj.name
+    console.log(name);
+    //解构赋值的意义
+    fn({width:100,height:50,age:20})
+    function fn_1(option) {  //传统的方式
+        //option.width
+        //option.height
+        //option.age
+    }
+
+    function fn_2({width,height,age}) {   //解构赋值方式
+      //创建了3个局部变量，值都来自对象，节省代码
+    }
+    fn_2({
+      width:100,
+      height:50,
+      age:20
+    })
+    //属性的简写
+    var a=2;
+    var b=10;
+    var c={a,b};
+</script>
+</body>
+</html>

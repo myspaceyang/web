@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    1.“找一些东西”例如：  var/function/参数
+    a=...
+    所有的变量，在运行代码之前，都提前赋了一个值：未定义
+    fn1=function(){alert(2);}
+    所有的函数，在运行代码之前，都是整个函数块
+    JS的预解析
+    遇到重名的只留下一个
+    变量和函数重名了，就只留下函数
+    2.逐行解读代码
+    解读表达式例如：= + - * / % ++ --  ！ 参数...
+     */
+    // alert(a);
+    // var a=1;
+    // alert(a);
+    // function a() {
+    //     alert(2);
+    // }
+    // alert(a);
+    // var a=3;
+    // alert(a);
+    // function a() {
+    //     alert(4);
+    // }
+    // alert(a);
+    /*
+    3.函数
+    下面代码解析：
+    a.找东西
+    先找到var a
+    找到foo()函数块
+    b.逐行执行
+    全局变量a=1;
+    调用foo函数，在函数内部发生的步骤如下
+        第一步，找东西
+              函数内部的变量a=undefined
+        第二步，逐行解析
+              弹出a=undefined;
+              并把函数内部的变量a=2;
+    回到全局层面，执行alert，弹出全局变量a=1；
+     */
+    // var a=1;
+    // function foo() {
+    //     alert(a);
+    //     var a=2;
+    // }
+    // foo();
+    // alert(a);
+    /*
+    4.作用域链
+    a.找东西
+    先找到var a
+    找到foo()函数块
+
+    b.逐行执行
+    全局变量a=1;因作用域扩展原因，a=2
+    调用foo函数，在函数中发生的步骤如下
+        第一步，找东西
+              函数内部的没有声明变量，所以函数内部为空
+        第二步，逐行解析
+              函数内部找不到a的值，会跳转到作用域更大的外部，并把外部的a赋值为2
+    回到全局层面，执行alert，弹出全局变量a=2；
+     */
+    // var a=1;
+    // function foo() {
+    //     alert(a);
+    //     a=2;
+    // }
+    // foo();
+    // alert(a);
+    /*
+    5.带参数但没传入参数的函数
+    a.找东西
+    先找到var a
+    找到foo(a)函数块
+
+    b.逐行执行
+    全局变量a=1;
+    调用foo函数，在函数中发生的步骤如下
+        第一步，找东西
+              函数foo带有参数a，a的值为undefined
+        第二步，逐行解析
+              函数执行弹窗a=undefined;
+              然后把函数a的值赋为2;
+    回到全局层面，执行alert，弹出全局变量a=1；
+     */
+    // var a=1;
+    // function foo(a) {
+    //     alert(a);
+    //     a=2;
+    // }
+    // foo();
+    // alert(a);
+    /*
+    6.带参数有传入参数的函数
+    a.找东西
+    先找到var a
+    找到foo(a)函数块
+
+    b.逐行执行
+    全局变量a=1;
+    调用foo函数，在函数中发生的步骤如下
+        第一步，找东西
+              因为函数带参数，且参数的值是全局调用的所以此时函数的参数a值为1
+        第二步，逐行解析
+              函数执行弹窗a=undefined;
+              然后把函数a的值赋为2;
+    回到全局层面，执行alert，弹出全局变量a=1；
+     */
+    var a=1;
+    function foo(a) {
+        alert(a);
+        a=2;
+    }
+    foo(a);
+    alert(a);
+</script>
+</body>
+</html>

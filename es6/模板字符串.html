@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //模板字符串就是一种字符串的新的表现形式
+    //基本用法
+    var s1=` hello `;
+    //解决痛点：字符串和变量拼接
+    var s3=" a " + s1 + " b " +s2;//传统上的拼接
+    var s4= ` a${s1} b ${s2} `; //新的拼接减少拼错几率
+    //解决痛点：字符串换行
+    var s5= `<div>
+               <span></span>
+<p>${s2}</p>
+</div>`
+</script>
+</body>
+</html>
