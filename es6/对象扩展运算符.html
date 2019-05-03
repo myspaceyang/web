@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var car={brand:"BMW",price:"306565",length:"3米"}
+    //克隆一个跟car完全一样的对象出来
+    var car2={...car}
+    console.log(car2);
+    //新车子，跟car的长度不同，其他相同
+    var car3={...car,length:"4米"}
+    console.log(car3);
+    </script>
+</body>
+</html>
