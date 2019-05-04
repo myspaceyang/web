@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数值</title>
+</head>
+<body>
+    <script>
+    //数值范围
+    // var x=0.5;
+    // for(var i=0;i<25;i++){
+    //     var x=x*x;
+    // }
+    // console.log(x);
+
+    //NaN 非数字
+    // var a=0;
+    // console.log(y=0/a);
+    // console.log(typeof y);
+
+    //与数值有关的全局方法
+    //parseInt()将字符串转为整数
+    var a='    1a23'
+    var b='    b1a23'
+    console.log(parseInt(a));//输出1
+    console.log(parseInt(b));//输出NaN
+    
+    //parseFloat将字符串转为浮点数
+    var c='    1.23'
+    var d='    b1.23'
+    console.log(parseFloat(c));//输出1
+    console.log(parseFloat(d));//输出NaN
+    console.log(parseFloat([]));// NaN
+
+    //isNaN判断一个值是否为NaN
+    console.log(isNaN('Hello'));
+    console.log(isNaN([]));
+
+    //isFinite返回一个布尔值，表示某个值是否为正常的数值
+    console.log(isFinite(Infinity));
+    console.log(isFinite(null));
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基本语法</title>
+</head>
+
+<body>
+    <script>
+    //1.语句
+    // var a=1+3;
+    // console.log(a);
+
+    //2.变量
+    // var a=1;
+    // var a;
+    // console.log(a);
+    // var a=1;
+    // a='hello';
+    // console.log(typeof a);
+
+    //变量提升
+    // console.log(a);
+    // var a=1;//undefined
+    // console.log(a);
+
+    //3.标识符
+    //保留字：arguments、break、case、catch、class、const、continue、
+    //debugger、default、delete、do、else、enum、eval、export、extends、
+    //false、finally、for、function、if、implements、import、in、instanceof、
+    //interface、let、new、null、package、private、protected、public、return、
+    //static、super、switch、this、throw、true、try、typeof、var、void、while、with、yield
+
+    //4.注释
+    //   ‘//’  单行    ‘/*    */’ 多行
+
+    //5.区块
+    //区块不构成单独的作用域
+    // {
+    //     var a=1;
+    // }
+    // console.log(a);
+
+    //6.条件语句
+    //if结构
+    // var m=3;
+    // if(m===3)
+    // m=m+1;
+    // console.log(m);
+
+    // var a=1;
+    // var b=2;
+    // if(a=b){
+    //     console.log(a);
+    // }
+
+    //if...else结构
+    // var m=1;
+    // var n=2;
+    // if(m!==1){
+    //     if(n===2){
+    //        console.log("hello");
+    //     }
+    // }
+    // else{
+    //         console.log("world");
+        
+    // }
+
+    //switch结构
+    // var x=3;
+    // switch(x){
+    //     case 1:
+    //     console.log("x等于1");
+    //     break;
+    //     case 2:
+    //     console.log("x等于2");
+    //     break;
+    //     default:
+    //     console.log("x等于其他值");
+    // }
+
+    //三元运算符  ? :
+    //var msg = '数字' + n + '是' + (n % 2 === 0 ? '偶数' : '奇数');
+
+    //7.循环语句
+    //while循环
+    // var i=1;
+    // while(i<100){
+    //     console.log('i当前等于:' + i);
+    //     i=i+1;
+    // }
+
+    //for循环
+    // var i=1;
+    // for(i=1;i<100;i++){
+    //     console.log('i当前等于:' +i);
+    // }
+
+    //do...while循环
+    // var x=3;
+    // var i=1;
+    // do{
+    //     console.log(i);
+    //     i++;
+    // }while(i<3)
+
+    //break   continue语句
+    // var i=0;
+    // while(i<20){
+    //     console.log(i);
+    //     i++;
+    //     if(i===10)break;
+    // }
+    // var i=0;
+    // while(i<100){
+    //     i++;
+    //     if(i%2==0)continue;
+    //     console.log('i当前等于'+ i);
+    // }
+
+    //标签Label
+    var i=0;
+    foo:{
+        console.log(i);
+        break foo;
+        console.log('本行不会有输出');
+    }
+    console.log(2);
+    </script>
+</body>
+
+</html>
