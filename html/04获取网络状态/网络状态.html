@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网络状态</title>
+</head>
+<body>
+    <script>
+    //获取当前网络状态
+    var state=window.navigator.onLine;
+    if(state){
+        console.log("当前网络良好");
+    }else{
+        console.log("当前断网");
+    }
+    </script>
+</body>
+</html>
