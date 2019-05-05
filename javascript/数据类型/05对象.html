@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象</title>
+</head>
+<body>
+    <script>
+       //生成方法
+    //    var obj={
+    //        foo:'hello',
+    //        bar:'world'
+    //    }
+    //    console.log(obj.foo+obj.bar);
+    var obj={
+        p:function(x){
+            return 2*x;
+        }
+    };
+    console.log(obj.p(1));
+
+    //链式引用
+    var o1={};
+    var o2={bar:'hello'};
+
+    o1.foo=o2;
+    console.log(o1.foo.bar);
+
+    //动态创建属性
+    var obj={};
+
+    obj.foo=123;
+    console.log(obj);
+
+    //对象的引用
+    var  x1={};
+    var  x2=x1;
+    x1.a=1;
+    console.log(x2.a);
+
+    //表达式还是语句
+    var x3=eval('{foo:123}');
+    console.log(x3);
+    var x4=eval('({foo:123})');
+    console.log(x4);
+    </script>
+</body>
+</html>
