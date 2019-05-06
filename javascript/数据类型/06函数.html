@@ -1,121 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>函数</title>
 </head>
+
 <body>
     <script>
-    //函数的声明
-    //function命令
-    // function print(s){
-    //     console.log(s);
-    // }
+        //函数的声明
+        //function命令
+        // function print(s){
+        //     console.log(s);
+        // }
 
-    //函数表达式
-    // var print=function(s){
-    //     console.log(s);
-    // }
+        //函数表达式
+        // var print=function(s){
+        //     console.log(s);
+        // }
 
-    //Function 构造函数 
-    // var add = new Function(
-    //     'x',
-    //     'y',
-    //     'return x+y'
-    // );
-    // function add(x,y){
-    //     return x+y;
-    // }
+        //Function 构造函数 
+        // var add = new Function(
+        //     'x',
+        //     'y',
+        //     'return x+y'
+        // );
+        // function add(x,y){
+        //     return x+y;
+        // }
 
-    //return语句，递归
-    // function add(x,y){
-    //     return x+y;
-    // }
-    // add(1,2);
-    // //递归调用计算斐波那契数列
-    // function fib(num){
-    //     if(num===0)return 0;
-    //     if(num===1)return 1;
-    //     return fib(num-2)+fib(num-1);
-    // }
-    // console.log(fib(6));
+        //return语句，递归
+        // function add(x,y){
+        //     return x+y;
+        // }
+        // add(1,2);
+        // //递归调用计算斐波那契数列
+        // function fib(num){
+        //     if(num===0)return 0;
+        //     if(num===1)return 1;
+        //     return fib(num-2)+fib(num-1);
+        // }
+        // console.log(fib(6));
 
-    //函数的提升
-    // var f=function(){
-    //     console.log('1');
-    // }
+        //函数的提升
+        // var f=function(){
+        //     console.log('1');
+        // }
 
-    // function f(){
-    //     console.log('2');
-    // }
-    // console.log(f());
+        // function f(){
+        //     console.log('2');
+        // }
+        // console.log(f());
 
-    //函数的属性和方法
-    //name属性
-    // var foo=function(){
+        //函数的属性和方法
+        //name属性
+        // var foo=function(){
 
-    // };
-    // console.log(foo.name);
+        // };
+        // console.log(foo.name);
 
-    // //name属性的作用是获取参数函数的名字
-    // var myFunc=function(){
+        // //name属性的作用是获取参数函数的名字
+        // var myFunc=function(){
 
-    // };
-    // function test(f){
-    //     console.log(f.name);
-    // }
-    // test(myFunc);
+        // };
+        // function test(f){
+        //     console.log(f.name);
+        // }
+        // test(myFunc);
 
-    // //length属性返回函数预期传入的参数个数
-    // function f(a,b){
-    //     return f.length;
-    // }
-    // console.log(f());
+        // //length属性返回函数预期传入的参数个数
+        // function f(a,b){
+        //     return f.length;
+        // }
+        // console.log(f());
 
-    // //toString属性返回一个字符串，是函数的源码
-    // function e(){
+        // //toString属性返回一个字符串，是函数的源码
+        // function e(){
 
-    // }
-    // console.log(e.toString);
+        // }
+        // console.log(e.toString);
 
-    // //函数的作用域
-    // //函数内部声明的变量会覆盖作用域内同名的全局变量
-    // var v=2;
-    // function eoo(){
-    //     var v=3;
-    //     console.log(v);
-    // }
-    // eoo();
+        // //函数的作用域
+        // //函数内部声明的变量会覆盖作用域内同名的全局变量
+        // var v=2;
+        // function eoo(){
+        //     var v=3;
+        //     console.log(v);
+        // }
+        // eoo();
 
-    // //函数内部的变量提升
-    // function eoo(){
-    //     if(x>100){
-    //         var tmp=x-100;
-    //     }
-    // }
-    // //等同于
-    // function eoo(){
-    //     var tmp;
-    //     if(x>100){
-    //         var tmp=x-100;
-    //     }
-    // }
+        // //函数内部的变量提升
+        // function eoo(){
+        //     if(x>100){
+        //         var tmp=x-100;
+        //     }
+        // }
+        // //等同于
+        // function eoo(){
+        //     var tmp;
+        //     if(x>100){
+        //         var tmp=x-100;
+        //     }
+        // }
 
-    //函数本身的作用域
-    // var a=1;
-    // var x=function(){
-    //     console.log(a);
-    // }
-    // function f(){
-    //     var a=2;
-    //     x();
-    // }
-    // f();
+        //函数本身的作用域
+        // var a=1;
+        // var x=function(){
+        //     console.log(a);
+        // }
+        // function f(){
+        //     var a=2;
+        //     x();
+        // }
+        // f();
 
-    //函数参数
-    
+        //函数参数,传递方式
+        // var p =2;
+        // function f(p){
+        //     p=3;
+        // }
+        // f(p);
+        //console.log(p);
+
+        // var obj={p:1};
+        // function f(o){
+        //     o.p=2;
+        // }
+        // f(obj);
+        // console.log(obj);
+
+        //arguments对象
+        // var f=function(one){
+        //     console.log(arguments[0]);
+        //     console.log(arguments[1]);
+        //     console.log(arguments[2]);
+        // }
+        // f(1,2,3);
+
+        //闭包
+        function f1() {
+            var a = 999;
+            function f2() {
+                console.log(a);
+            }
+            return f2;
+        }
+        var restuls = f1();
+        restuls();
+
+        //闭包另一个作用封装私有方法私有属性
+        // function Person(name) {
+        //     var _age;
+        //     function setAge(n) {
+        //         _age = n;
+        //     }
+        //     function getAge() {
+        //         return _age;
+        //     }
+
+        //     return {
+        //         name: name,
+        //         getAge: getAge,
+        //         setAge: setAge
+        //     };
+        // }
+
+        // var p1 = Person('张三');
+        // p1.setAge(25);
+        // p1.getAge() // 25
+
+        //立即调用的函数表达式（IIFE）
+        // 写法一
+        // var tmp = newData;
+        // processData(tmp);
+        // storeData(tmp);
+
+        // 写法二
+        // (function () {
+        //     var tmp = newData;
+        //     processData(tmp);
+        //     storeData(tmp);
+        // }());
+
+        //eval调用
+        eval('var a=1');
+        console.log(a);
     </script>
 </body>
+
 </html>
