@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数据类型的转换</title>
+</head>
+
+<body>
+    <script>
+        //强制转换Number(),String(),Boolean()
+        //Number()
+        console.log(Number('42 cat'));
+        console.log(parseInt('42 cat'));
+
+        console.log(parseInt('\t\v\r12.34\n'));
+        console.log(Number('\t\v\r12.34\n'));
+
+        //String()
+        console.log(String({ a: 13 }));
+        console.log(String([1, 2, 3]));
+
+        // var obj = {
+        //     valueOf: function () {
+        //         return {};
+        //     },
+        //     toString: function () {
+        //         return {};
+        //     }
+        // };
+        // String(obj());
+
+        //Boolean()
+        console.log(Boolean(undefined));
+        console.log(Boolean(null));
+        console.log(Boolean(0));
+        console.log(Boolean(NaN));
+        console.log(Boolean(''));
+
+        //自动转换
+        console.log(123+'abc');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>运算符顺序</title>
+</head>
+
+<body>
+    <script>
+        //void运算符 作用是执行一个表达式，不返回值或返回undefined
+        // var x = 3;
+        // void (x = 5);
+        // console.log(void (x = 5));
+
+        // function f() {
+        //     console.log('Hello World');
+        // }
+
+        //逗号运算符
+        console.log('a', 'b');
+        var value = (console.log('hi'), true);
+
+        //运算符优先级
+        var x = 1;
+        var arr = [];
+
+        var y = arr.length <= 0 || arr[0] === undefined ? x : arr[0];
+        //var y = ((arr.length <= 0) || (arr[0] === undefined)) ? x : arr[0];
+        console.log(y);
+
+        //左结合右结合
+        //赋值和三元运算符是右结合   还有指数运算符   **
+        var w,x,y,z,q,a,b,c,d,e,f,g;
+        w = x = y = z;
+        q = a ? b : c ? d : e ? f : g;
+
+        w = (x = (y = z));
+        q = a ? b : (c ? d : (e ? f : g));
+
+        console.log(2 ** 3 ** 2);
+    </script>
+    <a href="http://example.com" onclick="f(); return false;">点击</a>
+    <a href="javascript: void(document.form.submit())">
+        提交
+    </a>
+</body>
+
+</html>
