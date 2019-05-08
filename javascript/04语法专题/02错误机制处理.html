@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>错误机制处理</title>
+</head>
+
+<body>
+    <script>
+        //Error实例对象
+        function throwit() {
+            throw new Error('');
+        }
+
+        function catchit() {
+            try {
+                throwit();
+            } catch (e) {
+                console.log(e.stack); // print stack trace
+            }
+        }
+
+        catchit()
+
+        //原生错误类型
+        //SyntaxError对象
+        //var 1a;
+
+        //console.log 'hello');
+
+        //ReferenceError 对象
+        //console.log() = 1;
+
+        //RangeError 对象
+        //new Array(-1)
+
+        //TypeError 对象
+        //new 123;
+
+        // var obj = {};
+        // obj.unknownMethod();
+
+        //URIError 对象
+        //decodeURI('%2');
+
+        //throw语句
+        // function UserError(message){
+        //      this.message=message||'默认信息';
+        //      this.name='UserError';
+        // }
+        // throw new UserError('出错了');
+
+        //try...catch结构
+        // try {
+        //     throw new Error('出错了!');
+        // } catch (e) {
+        //     console.log(e.name + ": " + e.message);
+        //     console.log(e.stack);
+        // }
+
+        //finally代码块表示不管是否出现错误，都必须执行最后运行的语句
+        function cleansUp() {
+            try {
+                throw new Error('出错了……');
+                console.log('此行不会执行');
+            } finally {
+                console.log('完成清理工作');
+            }
+        }
+
+        cleansUp();
+    </script>
+</body>
+
+</html>

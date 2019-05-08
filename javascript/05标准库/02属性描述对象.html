@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>属性描述对象</title>
+</head>
+
+<body>
+    <script>
+        //概述
+        // {
+        // value: 123,
+        // writable: false,
+        // enumerable: true,
+        // configurable: false,
+        // get: undefined,
+        // set: undefined
+        // }
+
+        //Object.getOwnPropertyDescriptor()可以获取属性描述对象
+        //它的第一个参数是目标对象，第二个参数是一个字符串，对应目标对象的某个属性名
+        var obj = { p: 'a' };
+
+        console.log(Object.getOwnPropertyDescriptor(obj, 'p'));
+
+        //Object.getOwnPropertyNames()返回一个数组，成员是参数对象自身的全部属性的属性名，不管该属性是否可遍历
+        var obj = Object.defineProperties({}, {
+            p1: { value: 1, enumerable: true },
+            p2: { value: 2, enumerable: false }
+        });
+        console.log(Object.getOwnPropertyNames(obj));
+    </script>
+</body>
+
+</html>

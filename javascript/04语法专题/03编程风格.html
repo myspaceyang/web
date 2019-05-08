@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>编程风格</title>
+</head>
+
+<body>
+    <script>
+        //区块
+        // block{
+
+        // };
+        // block
+        // {
+
+        // }
+
+        //圆括号
+        // 表示函数调用时，函数名与左括号之间没有空格。
+
+        // 表示函数定义时，函数名与左括号之间没有空格。
+
+        // 其他情况时，前面位置的语法元素与左括号之间，都有一个空格。
+
+        // 圆括号表示函数的调用
+        //console.log('abc');
+
+        // 圆括号表示表达式的组合
+        //(1 + 2) * 3
+
+        //使用分号
+        // var f = function f() {
+        // };
+
+        //尽量避免使用全局变量，如果真要使用也要把变量名大写
+        // var USER_NAME
+
+        //变量声明
+        // var x;
+        // if (!x) {
+        //     x = {};
+        // }
+
+        //自增自减少用++，--,多用+=，-=
+
+        //switch...case语句少用
+        // function doAction(action) {
+        //     switch (action) {
+        //         case 'hack':
+        //             return 'hack';
+        //         case 'slash':
+        //             return 'slash';
+        //         case 'run':
+        //             return 'run';
+        //         default:
+        //             throw new Error('Invalid action.');
+        //     }
+        // }
+
+        // function doAction(action) {
+        //     var actions = {
+        //         'hack': function () {
+        //             return 'hack';
+        //         },
+        //         'slash': function () {
+        //             return 'slash';
+        //         },
+        //         'run': function () {
+        //             return 'run';
+        //         }
+        //     };
+
+        //     if (typeof actions[action] !== 'function') {
+        //         throw new Error('Invalid action.');
+        //     }
+
+        //     return actions[action]();
+        // }
+    </script>
+</body>
+
+</html>

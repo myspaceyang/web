@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object对象</title>
+</head>
+
+<body>
+    <script>
+        //Object实例方法
+        // Object.prototype.print = function () {
+        //     console.log(this);
+        // };
+
+        // var obj = new Object();
+        // obj.print();
+
+        //object()
+        // var obj=Object(undefined);
+        // console.log(obj);
+
+        //instanceof运算符用来验证一个对象是否是指定构造函数的实例
+        // var obj=Object(1);
+        // obj instanceof Object;
+
+        //Object构造函数
+        // var obj=new Object();
+        // //等同于
+        // var obj={};
+
+        //Object静态方法
+        // var obj={
+        //     p1:123,
+        //     p2:456
+        // };
+        // Object.keys(obj);//["p1","p2"]
+
+        //Object.prototype.valueOf()返回一个对象的值
+        // var obj=new Object();
+        // obj.valueOf=function(){
+        //     return 2;
+        // }
+        // console.log(1+obj);
+
+        // Object.prototype.toString()返回一个对象字符串形式
+        // var obj=new Object();
+        // obj.toString=function(){
+        //     return 'hello';
+        // }
+        // console.log(obj+' '+'world');
+
+        //toString()的应用：判断数据类型
+        // var obj = {};
+        // obj.toString();
+
+        // Object.prototype.toString.call(2) // "[object Number]"
+        // Object.prototype.toString.call('') // "[object String]"
+        // Object.prototype.toString.call(true) // "[object Boolean]"
+        // Object.prototype.toString.call(undefined) // "[object Undefined]"
+        // Object.prototype.toString.call(null) // "[object Null]"
+        // Object.prototype.toString.call(Math) // "[object Math]"
+        // Object.prototype.toString.call({}) // "[object Object]"
+        // Object.prototype.toString.call([]) // "[object Array]"
+
+        // toLocaleString()
+        // var date=new Date();
+        // date.toString();
+        // date.toLocaleString();
+
+        // hasOwnProperty()接受一个字符串作为参数，返回一个布尔值，表示该实例对象自身是否具有该属性
+        var obj={
+            p:123
+        };
+        console.log(obj.hasOwnProperty('p'));
+        console.log(obj.hasOwnProperty(toString));
+    </script>
+</body>
+
+</html>
