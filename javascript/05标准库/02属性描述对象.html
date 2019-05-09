@@ -22,16 +22,184 @@
 
         //Object.getOwnPropertyDescriptor()可以获取属性描述对象
         //它的第一个参数是目标对象，第二个参数是一个字符串，对应目标对象的某个属性名
-        var obj = { p: 'a' };
+        // var obj = { p: 'a' };
 
-        console.log(Object.getOwnPropertyDescriptor(obj, 'p'));
+        // console.log(Object.getOwnPropertyDescriptor(obj, 'p'));
 
         //Object.getOwnPropertyNames()返回一个数组，成员是参数对象自身的全部属性的属性名，不管该属性是否可遍历
-        var obj = Object.defineProperties({}, {
-            p1: { value: 1, enumerable: true },
-            p2: { value: 2, enumerable: false }
-        });
-        console.log(Object.getOwnPropertyNames(obj));
+        // var obj = Object.defineProperties({}, {
+        //     p1: { value: 1, enumerable: true },
+        //     p2: { value: 2, enumerable: false }
+        // });
+        // console.log(Object.getOwnPropertyNames(obj));
+
+        //Object.defineProperty()，Object.defineProperties()可以定义修改一个/或多个属性
+
+        // var obj = Object.defineProperties({}, {
+        //     p1: { value: 123, enumerable: true },
+        //     p2: { value: 'abc', enumerable: true },
+        //     p3: {
+        //         get: function () { return this.p1 + this.p2 },
+        //         enumerable: true,
+        //         configurable: true
+        //     }
+        // });
+        // console.log(obj.p1);
+        // console.log(obj.p2);
+        // console.log(obj.p3);
+
+        //元属性
+        //value属性
+        // var obj = {};
+        // obj.p = 123;
+        // console.log(Object.getOwnPropertyDescriptor(obj, 'p').value);
+
+        //writable属性是一个布尔值，决定目标属性的值是否能改变
+        // var obj = {};
+
+        // Object.defineProperty(obj, 'a', {
+        //     value: 37,
+        //     writable: false
+        // });
+
+        // obj.a = 37;
+
+        // enumerable表示目标属性是否可遍历
+        // var obj = {};
+        // Object.defineProperty(obj, 'x', {
+        //     value: 123,
+        //     enumerable: false
+        // });
+        // obj.x;
+        // for (var key in obj) {
+        //     console.log(key);
+        // }
+        // console.log(Object.keys(obj));
+        // console.log(JSON.stringify(obj));
+
+        // configurable决定了是否可以修改属性描述对象
+        // var obj = Object.defineProperty({}, 'p', {
+        //     value: 1,
+        //     writable: false,
+        //     enumerable: false,
+        //     configurable: false
+        // });
+        // Object.defineProperty(obj, 'p', {value: 2});
+        // Object.defineProperty(obj, 'p', {writable: true});
+        // Object.defineProperty(obj, 'p', {enumerable: true});
+        // Object.defineProperty(obj, 'p', {configurable: true});
+
+        //存取器
+        // var obj = Object.defineProperty({}, 'p', {
+        //     get: function () {
+        //         return 'getter';
+        //     },
+        //     set: function (value) {
+        //         console.log('setter: ' + value);
+        //     }
+        // });
+
+        // console.log(obj.p);
+        // console.log(obj.p=123);
+
+        //对象的拷贝
+        // var extend = function (to, from) {
+        //     for (var property in from) {
+        //         if (!from.hasOwnProperty(property)) continue;
+        //         Object.defineProperty(
+        //             to,
+        //             property,
+        //             Object.getOwnPropertyDescriptor(from, property)
+        //         );
+        //     }
+
+        //     return to;
+        // }
+
+        // extend({}, { get a() { return 1 } })
+
+        //控制对象的状态
+        // Object.preventExtensions()使对象无法在添加新属性
+        // var obj = new Object();
+        // Object.preventExtensions(obj);
+
+        // Object.defineProperty(obj, 'p', {
+        //     value: 'hello'
+        // });
+        // obj.p=1;
+        // obj.p;
+
+        // Object.isExtensible()用来检测一个对象是否使用了Object.preventExtensions()检查一个对象是否可以添加属性
+        // var obj=new Object();
+        // Object.isExtensible(obj);
+        // Object.preventExtensions(obj);
+        // Object.isExtensible(obj);
+
+        // Object.seal()使得一个对象无法添加新属性也无法删除旧属性
+        // var obj={p:'hello'};
+        // Object.seal(obj);
+        // delete obj.p;
+        // console.log(obj.p);
+        // obj.x = 'world';
+        // console.log(obj.x);
+
+        // Object.isSealed用来检测一个对象是否使用了Object.seal方法
+        // var obj={p:'a'};
+        // Object.seal(obj);
+        // Object.isSealed(obj);
+
+        // Object.freeze()使得一个对象无法添加新属性、无法删除旧属性、也无法改变属性的值，使得这个对象实际上变成了常量
+        // var obj = {
+        //     p: 'hello'
+        // };
+
+        // Object.freeze(obj);
+
+        // obj.p = 'world';
+        // obj.p // "hello"
+
+        // obj.t = 'hello';
+        // obj.t // undefined
+
+        // delete obj.p // false
+        // obj.p // "hello"
+
+        // Object.isFrozen()检测是否使用了Object.freeze()方法
+        // var obj = {
+        //     p: 'hello'
+        // };
+
+        // Object.freeze(obj);
+
+        // if (!Object.isFrozen(obj)) {
+        //     obj.p = 'world';
+        // }
+
+        //局限性
+        // var obj = new Object();
+        // Object.preventExtensions(obj);
+
+        // var proto = Object.getPrototypeOf(obj);
+        // proto.t = 'hello';
+        // obj.t
+
+        // var obj = new Object();
+        // Object.preventExtensions(obj);
+
+        // var proto = Object.getPrototypeOf(obj);
+        // Object.preventExtensions(proto);
+
+        // proto.t = 'hello';
+        // obj.t // undefined
+
+        // var obj = {
+        //     foo: 1,
+        //     bar: ['a', 'b']
+        // };
+        // Object.freeze(obj);
+
+        // obj.bar.push('c');
+        // obj.bar // ["a", "b", "c"]
     </script>
 </body>
 
