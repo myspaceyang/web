@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>String对象</title>
+</head>
+<body>
+    <script>
+    //概述
+    var a1='abc';
+    var a2=new String('abc');
+    console.log (typeof a1);
+    console.log (typeof a2);
+    console.log (a2.valueOf());
+
+    //静态方法
+    // String.fromCharCode()
+    console.log (String.fromCharCode(104));
+
+    // String.prototype.length()
+    console.log('abc'.length);
+
+    // String.prototype.charAt()
+    var s=new String('abc');
+    console.log (s.charAt(1));
+
+    // String.prototypecharCodeAt()
+    console.log('abc'.charCodeAt(2));
+
+    // String.prototype.concat()
+    var s1='abc';
+    var s2='efg';
+    console.log(s1.concat(s2));
+
+    // String.prototype.slice()
+    console.log('javascript'.slice(0,4));
+
+    // String.prototype.indexOf()，String.prototype.lastIndexOf()
+    console.log('javascript'.indexOf('script'));
+
+    // String.prototype.trim()
+    console.log(' javascript  '.trim());
+
+    // String.prototype.match()
+    console.log('cat,bat,sat,fat'.match('at'));
+    console.log('cat,bat,sat,fat'.match('ta'));
+
+    // String.prototype.search()
+    console.log('cat,bat,sat,fat'.search('at'));
+    console.log('cat,bat,sat,fat'.search('g'));
+
+    // String.prototype.replace()
+    console.log('aaa'.replace('a','b'));
+    //String.prototype.repeat()
+    console.log('aba'.repeat('aba','baa'));
+    console.log('aba'.repeat(3,'baa'));
+
+    // String.prototype.split()
+    console.log('a|b|c'.split('|')); 
+
+    // String.prototype.localeCompare()
+    console.log('apple'.localeCompare('pear'));
+    console.log('apple'.localeCompare('apple'));
+    console.log('apple'.localeCompare('a'));
+    </script>
+</body>
+</html>

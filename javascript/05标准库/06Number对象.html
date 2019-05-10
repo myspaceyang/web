@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Number对象</title>
+</head>
+
+<body>
+    <script>
+        //定义
+        var n = new Number(1);
+        console.log(typeof n);
+
+        //静态属性
+        Number.POSITIVE_INFINITY // Infinity
+        Number.NEGATIVE_INFINITY // -Infinity
+        Number.NaN // NaN
+
+        Number.MAX_VALUE
+        // 1.7976931348623157e+308
+        Number.MAX_VALUE < Infinity
+        // true
+
+        Number.MIN_VALUE
+        // 5e-324
+        Number.MIN_VALUE > 0
+        // true
+
+        // Number.MAX_SAFE_INTEGER // 9007199254740991
+        // Number.MIN_SAFE_INTEGER // -9007199254740991
+
+        //实例方法
+        // Number.prototype.toString()
+        // (10).toString(2); // "1010"
+        // (10).toString(8); // "12"
+        // (10).toString(16); // "a"
+
+        // Number.prototype.toFixed()
+        // (10.02052).toFixed(2);//10.02
+
+        //自定义方法
+        Number.prototype.add = function (x) {
+            return this + x;
+        };
+
+        console.log(8['add'](2));  // 10
+    </script>
+</body>
+
+</html>

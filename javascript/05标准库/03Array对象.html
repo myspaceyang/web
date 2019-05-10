@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array对象</title>
+</head>
+
+<body>
+    <script>
+        //构造函数
+        // var arr=new Array(2);
+        // console.log(arr.length);
+
+        //静态方法
+        //Array.isArray()方法
+        // var arr=[1,2,3];
+        // typeof arr;
+        // console.log(Array.isArray(arr));
+
+        //valueOf(),toString()
+        var arr = [1, 2, 3];
+        console.log(arr.valueOf());
+        console.log(arr.toString());
+
+        //push(),pop()
+        // arr.push(4);
+        // console.log(arr);
+        // arr.pop(0);
+        // console.log(arr);
+
+        //shift(),unshift()
+        // arr.shift();
+        // console.log(arr);
+        // arr.unshift(1);
+        // console.log(arr);
+
+        //join()
+        // arr.join('  ');
+        // console.log(arr);
+
+        //concat()
+        // var arr3=[1,2,3].concat(4,5,6);
+        // console.log(arr3);
+
+        //浅拷贝
+        // var obj={a:1};
+        // var oldArray=[obj];
+        // var newArray=oldArray.concat();
+        // obj.a=2;
+        // console.log(newArray[0].a) ;
+
+        //reverse()
+        console.log(arr.reverse());
+
+        //slice()
+        console.log(arr.slice(0, 2));
+
+        //splice()
+        var arr1 = [1, 2, 3, 4, 5, 6, 7];
+        arr1.splice(2, 1);
+        console.log(arr1);
+
+        //sort()
+        var arr2 = [5, 6, 5, 81, 2, 54, 2, 5];
+        arr2.sort();
+        console.log(arr2);
+
+        //map()
+        var numbers = [1, 2, 3];
+        numbers.map(function (n) {
+            return n + 1;
+        });
+        numbers.map;
+
+        //forEach()
+        function log(element, index, array) {
+            console.log('[' + index + ']=' + element);
+        }
+        [2, 5, 9].forEach(log);
+
+        // filter()
+        [1, 2, 3, 4, 5].filter(function (elem) {
+            return (elem > 3);
+        })
+
+        var arr4 = [0, 1, 'a', false, 1];
+
+        console.log(arr4.filter(Boolean));
+
+        //indexOf()
+        console.log(arr4.indexOf(1));
+
+        // lastindexOf()
+        console.log(arr4.lastIndexOf(1));
+
+        //链式使用
+        var users = [
+            { name: 'tom', email: 'tom@example.com' },
+            { name: 'peter', email: 'peter@example.com' }
+        ];
+
+        users
+            .map(function (user) {
+                return user.email;
+            })
+            .filter(function (email) {
+                return /^t/.test(email);
+            })
+            .forEach(function (email) {
+                console.log(email);
+            });
+    </script>
+</body>
+
+</html>

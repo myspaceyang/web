@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>包装对象</title>
+</head>
+
+<body>
+    <script>
+        //定义
+        var v1 = new Number(123);
+        var v2 = new String('abc');
+        var v3 = new Boolean(true);
+
+        typeof v1 // "object"
+        typeof v2 // "object"
+        typeof v3 // "object"
+
+        v1 === 123 // false
+        v2 === 'abc' // false
+        v3 === true // false
+
+        //实例方法
+        // valueOf()
+        console.log(new Number(123).valueOf());
+        console.log(typeof(new Number(123)));
+
+        // toString()
+        console.log(new Number(123).toString());
+    </script>
+</body>
+
+</html>

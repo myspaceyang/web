@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Date对象</title>
+</head>
+
+<body>
+    <script>
+        //普通函数得用法
+        // console.log(Date());
+
+        // //构造函数得用法
+        // var today = new Date();
+        // console.log(today);
+
+        //日期的计算
+        // var d1 = new Date(2000, 2, 1);
+        // var d2 = new Date(2000, 3, 1);
+        // console.log(d2-d1);
+        // console.log(d1-d2);
+        // console.log(d1+d2);
+
+        // Date.parse()
+        console.log(Date.parse('Aug 9, 1995'));
+
+        // get类方法
+        // getTime() ：返回实例距离1970年1月1日00: 00: 00的毫秒数，等同于valueOf方法。
+        // getDate() ：返回实例对象对应每个月的几号（从1开始）。
+        // getDay() ：返回星期几，星期日为0，星期一为1，以此类推。
+        // getFullYear() ：返回四位的年份。
+        // getMonth() ：返回月份（0表示1月，11表示12月）。
+        // getHours() ：返回小时（0 - 23）。
+        // getMilliseconds() ：返回毫秒（0 - 999）。
+        // getMinutes() ：返回分钟（0 - 59）。
+        // getSeconds() ：返回秒（0 - 59）。
+
+        //set类方法
+        // setDate(date) ：设置实例对象对应的每个月的几号（1 - 31），返回改变后毫秒时间戳。
+        // setFullYear(year[, month, date]) ：设置四位年份。
+        // setHours(hour[, min, sec, ms]) ：设置小时（0 - 23）。
+        // setMilliseconds() ：设置毫秒（0 - 999）。
+        // setMinutes(min[, sec, ms]) ：设置分钟（0 - 59）。
+        // setMonth(month[, date]) ：设置月份（0 - 11）。
+        // setSeconds(sec[, ms]) ：设置秒（0 - 59）。
+        // setTime(milliseconds) ：设置毫秒时间戳。
+    </script>
+</body>
+
+</html>
