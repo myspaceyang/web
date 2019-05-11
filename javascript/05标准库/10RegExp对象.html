@@ -11,13 +11,68 @@
     //RegExp正则表达式
 
     //概述
-    var regex = /xyz/;
-    var regex1=new RegExp('xyz');
+    // var regex = /xyz/;
+    // var regex1=new RegExp('xyz');
 
     //实例方法
 
     // RegExp.prototype.test()
-    console.log(/cat/.test('cat and dogs'));
+    // console.log(/cat/.test('cat and dogs'));
+
+    // RegExp.prototype.exec()
+    // var s1='/x.y/';
+    // var a1=/x/;
+    // var a2=/y/;
+    // console.log(a1.exec(s1));
+    // a2.exec(s1);
+
+    // var reg=/a/g;
+    // var str='abc_abc_abc';
+    // while(true){
+    //     var match=reg.exec(str);
+    //     if(!match) break;
+    //     console.log('#'+match.index+':'+match[0]);
+    // }
+
+    //字符串的实例方法
+    // String.prototype.match()
+    // var s='_x_x';
+    // var r1='/x/';
+    // var r2='/y/';
+    // console.log(s.match(r1));
+    // console.log(s.match(r2));
+
+    //匹配规则
+    //字面量字符元字符
+    // /dog/.test('old dog');
+
+    // //位置字符
+    // // test必须出现在开始位置
+    // /^test/.test('test123') // true
+
+    // // test必须出现在结束位置
+    // /test$/.test('new test') // true
+
+    // // 从开始位置到结束位置只有test
+    // /^test$/.test('test') // true
+    // /^test$/.test('test test') // false
+
+    //选择符
+    // /11|22/.test('911') // true
+
+    //转义符
+    // /1\+1/.test('1+1')
+
+    //脱字符
+    // /[^abc]/.test('hello world') // true
+
+    //连字符
+    // /[a-z]/.test('b');
+
+    //先行断言
+    // var m = 'abc'.match(/b(?=c)/);
+    //先行否定断言
+    // var m = 'abd'.match(/b(?!c)/);
     </script>
 </body>
 </html>

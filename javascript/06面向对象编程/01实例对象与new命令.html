@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实例对象与new命令</title>
+</head>
+<body>
+    <script>
+    //对象是抽象的单个实物
+    //对象封装了属性(prototype和方法method)
+
+    //构造函数，专门用来生成实例对象的函数
+    //为了与普通函数区别，构造函数名字的第一个字母通常大写。
+
+    // 构造函数的特点有两个。
+
+    // 函数体内部使用了this关键字，代表了所要生成的对象实例。
+    // 生成对象的时候，必须使用new命令。
+    var Obj=function(){
+        this.price=1000;
+    };
+
+    //new命令就是执行构造函数，返回一个实例对象
+    var obj=new Obj();
+    obj.price;
+    </script>
+</body>
+</html>
