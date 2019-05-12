@@ -25,6 +25,44 @@
     //new命令就是执行构造函数，返回一个实例对象
     var obj=new Obj();
     obj.price;
+
+    //判断构造函数内部是否使用new命令
+    function Fubar(foo,bar){
+        if(!(this instanceof Fubar)){
+            return new Fubar(foo,bar);
+        }
+        this._foo=foo;
+        this._bar=bar;
+    }
+    console.log(Fubar(1,2)._foo);
+    console.log((new Fubar(1,2))._foo);
+
+    //new 命令的原理
+    //使用new命令时，它后面的函数依次执行下面的步骤。
+
+    // 创建一个空对象，作为将要返回的对象实例。
+    // 将这个空对象的原型，指向构造函数的prototype属性。
+    // 将这个空对象赋值给函数内部的this关键字。
+    // 开始执行构造函数内部的代码。
+
+    //new target如果当前函数是new命令调用，new.target指向当前函数，否则为undefined
+    function f(){
+        console.log(new.target === f);
+    }
+    f();
+    new f();
+
+    // Object.create()创建实例对象
+    var person1={
+        name:'张三',
+        age:28,
+        greeting:function(){
+            console.log('Hi! I\'m'+this.name+'.');
+        }
+    };
+    var person2=Object.create(person1);
+    console.log(person2.name);
+    person2.greeting();
     </script>
 </body>
 </html>

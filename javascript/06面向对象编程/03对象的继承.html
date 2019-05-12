@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象的继承</title>
+</head>
+
+<body>
+    <script>
+        //原型对象
+        //构造函数的缺点
+        // function cat1(name, color) {
+        //     this.name = name;
+        //     this.color = color;
+        // }
+        // var cat2 = new cat1('长毛兔', '黑色');
+        // cat2.name;
+        // cat2.color;
+
+        // function Cat(name, color) {
+        //     this.name = name;
+        //     this.color = color;
+        //     this.meow = function () {
+        //         console.log('喵喵');
+        //     };
+        // }
+
+        // var cat1 = new Cat('大毛', '白色');
+        // var cat2 = new Cat('二毛', '黑色');
+
+        // cat1.meow === cat2.meow//false
+
+        // prototype属性的作用
+        // function Animal(name){
+        //     this.name=name;
+        // }
+        // Animal.prototype.color='白色';
+        // var cat1=new Animal('长毛');
+        // console.log(cat1.color);
+        // console.log(cat1.name);
+
+        //原型链
+        // var MyArray = function () { };
+
+        // MyArray.prototype = new Array();
+        // MyArray.prototype.constructor = MyArray;
+
+        // var mine = new MyArray();
+        // mine.push(1, 2, 3);
+        // mine.length // 3
+        // mine instanceof Array // true
+
+        //constructor 属性
+
+        // function F() { };
+        // var f = new F();
+
+        // f.constructor === F ;
+        // f.constructor === RegExp ;
+
+        // instanceof运算符
+        // var obj = { foo: 123 };
+        // obj instanceof Object // true
+
+        // null instanceof Object // false
+
+        //利用instanceof运算符，还可以巧妙地解决，调用构造函数时，忘了加new命令的问题
+        // function Fubar(foo, bar) {
+        //     if (this instanceof Fubar) {
+        //         this._foo = foo;
+        //         this._bar = bar;
+        //     } else {
+        //         return new Fubar(foo, bar);
+        //     }
+        // }
+
+        //构造函数的继承
+        // function Sub(value) {
+        //     Super.call(this);
+        //     this.prop = value;
+        // }
+        // Sub.prototype = Object.create(Super.prototype);
+        // Sub.prototype.constructor = Sub;
+        // Sub.prototype.method = '...';
+
+        //多重继承
+        // function M1() {
+        //     this.hello = 'hello';
+        // }
+
+        // function M2() {
+        //     this.world = 'world';
+        // }
+
+        // function S() {
+        //     M1.call(this);
+        //     M2.call(this);
+        // }
+
+        // // 继承 M1
+        // S.prototype = Object.create(M1.prototype);
+        // // 继承链上加入 M2
+        // Object.assign(S.prototype, M2.prototype);
+
+        // // 指定构造函数
+        // S.prototype.constructor = S;
+
+        // var s = new S();
+        // s.hello // 'hello'
+        // s.world // 'world'
+
+        //模块
+        //模块的基本实现
+        // var module1 = new Object({
+        //     _count: 0,
+        //     m1: function () {
+        //         //...
+        //     },
+        //     m2: function () {
+        //         //...
+        //     }
+        // });
+        // module1.m1();
+        // module1._count = 5;
+
+        //封装私有变量：构造函数的写法
+        // function StringBuilder() {
+        //     var buffer = [];
+
+        //     this.add = function (str) {
+        //         buffer.push(str);
+        //     };
+
+        //     this.toString = function () {
+        //         return buffer.join('');
+        //     };
+
+        // }
+
+        // function StringBuilder() {
+        //     this._buffer = [];
+        // }
+
+        // StringBuilder.prototype = {
+        //     constructor: StringBuilder,
+        //     add: function (str) {
+        //         this._buffer.push(str);
+        //     },
+        //     toString: function () {
+        //         return this._buffer.join('');
+        //     }
+        // };
+
+        //封装私有变量：立即执行函数的写法
+        // var module1 = (function () {
+        //     var _count = 0;
+        //     var m1 = function () {
+        //         //...
+        //     };
+        //     var m2 = function () {
+        //         //...
+        //     };
+        //     return {
+        //         m1: m1,
+        //         m2: m2
+        //     };
+        // })();
+        // console.info(module1._count); //undefined
+
+        //模块的放大模式
+        // var module1 = (function (mod) {
+        //     mod.m3 = function () {
+        //         //...
+        //     };
+        //     return mod;
+        // })(module1);
+
+        // var module1 = (function (mod) {
+        //     //...
+        //     return mod;
+        // })(window.module1 || {}); 
+
+        //输入全局变量
+        // (function ($, window, document) {
+
+        //     function go(num) {
+        //     }
+
+        //     function handleEvents() {
+        //     }
+
+        //     function initialize() {
+        //     }
+
+        //     function dieCarouselDie() {
+        //     }
+
+        //     //attach to the global scope
+        //     window.finalCarousel = {
+        //         init: initialize,
+        //         destroy: dieCarouselDie
+        //     }
+
+        // })(jQuery, window, document);
+    </script>
+</body>
+
+</html>

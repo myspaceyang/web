@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>this关键字</title>
+</head>
+<body>
+    <script>
+    //this涵义
+    // var person={
+    //     name:'张三',
+    //     age:28,
+    //     describe:function(){
+    //         return '姓名:'+ this.name;
+    //     }
+    // };
+    // console.log(person.describe());
+
+    // var A={
+    //     name:'李四',
+    //     age:18,
+    //     describe:function(){
+    //         return '姓名：'+this.name;
+    //     }
+    // };
+    // var B={
+    //     name:'王五'
+    // };
+    // B.describe=A.describe;
+    // console.log(B.describe());
+
+    // function validate(obj,lowval,hival){
+    //     if((obj.value<lowval)||(obj.value>hival))
+    //     console.log('Invalid Value!');
+    // }
+
+    //实质
+    // var f=function(){
+    //     console.log(this.x);
+    // }
+    // var x=1;
+    // var y={
+    //     f:f,
+    //     x:2
+    // };
+    // console.log(f())
+    // y.f()
+
+    //使用场合
+    //全局环境使用this，它指的就是顶层的window
+
+    // this === window;
+    // function f(){
+    //     console.log(this === window);
+    // }
+    // f();
+
+    //构造函数
+    // var Obj=function(p){
+    //    this.p=p;
+    // }
+    // var o=new Obj('Hello World!');
+    // console.log(o.p);
+
+    //对象的方法 如果对象的方法里面包含this，this的指向就是方法运行时所在的对象。该方法赋值给另一个对象，就会改变this的指向
+    // var obj={
+    //     foo:function(){
+    //         console.log(this);
+    //     }
+    // };
+    // obj.foo();
+
+    // var a={
+    //     p:'hello',
+    //     b:{
+    //         m:function(){
+    //             console.log(this.p);
+    //         }
+    //     }
+    // };
+    // a.b.m();
+
+    //等同于
+    // var b={
+    //     m:function(){
+    //         console.log(this.p);
+    //     }
+    // };
+
+    // var a={
+    //     p:'hello',
+    //     b:b
+    // };
+    // (a.b).m();
+
+    //避免用法
+    //避免多层this
+    // var o={
+    //     f1:function(){
+    //         console.log(this);
+    //         var f2=function(){
+    //             console.log(this);
+    //         }();
+    //     }
+    // }
+    // o.f1();
+
+    // //等同于
+    // var temp=function(){
+    //     console.log(this);
+    // };
+    // var o={
+    //     f1:function(){
+    //         console.log(this);
+    //         var f2=temp();
+    //     }
+    // }
+    // o.f1();
+    // //第二层用一个指向外层的that方法
+    // var o={
+    //     f1:function(){
+    //         console.log(this);
+    //         var that=this;
+    //         var f2=function(){
+    //             console.log(that);
+    //         }();
+    //     }
+    // }
+    // o.f1();
+
+    //避免数组处理方法中的this
+    // var o={
+    //     v:'hello',
+    //     p:['a1','a2'],
+    //     f:function f(){
+    //         this.p.forEach(function(item){
+    //             console.log(this.v+''+item);
+    //         });
+    //     }
+    // }
+    // o.f();
+    //foreach方法的回调函数中的this，其实是指向window对象，因此取不到o.v的值。原因跟上一段的多层this是一样的，就是内层的this不指向外部，而指向顶层对象。
+
+    //解决这个问题的一种方法，就是前面提到的，使用中间变量固定this
+    // var o={
+    //     v:'hello',
+    //     p:['a1','a2'],
+    //     f:function f(){
+    //         var that=this;
+    //         this.p.forEach(function(item){
+    //             console.log(that.v+''+item);
+    //         });
+    //     }
+    // }
+    // o.f();
+
+    //避免回调函数的this
+    // var o=new Object();
+    // o.f=function(){
+    //     console.log(this === o);
+    // }
+    // // jQuery 的写法
+    // $('#button').on('click', o.f);
+
+    //绑定this的方法
+    // Function.prototype.call()函数实例的call方法，可以指定函数内部this的指向（即函数执行时所在的作用域），然后在所指定的作用域中，调用该函数
+    // var obj = {};
+    // var f=function(){
+    //     return this;
+    // };
+    // console.log(f() ===window);
+    // console.log(f.call(obj)===obj);
+
+    // var n=123;
+    // var obj={n:456};
+    // function a(){
+    //     console.log(this.n);
+    // }
+    // a.call();
+    // a.call(null);
+    // a.call(undefined);
+    // a.call(window);
+    // a.call(obj);
+
+    // function add(a,b){
+    //     return a+b;
+    // }
+    // console.log(add.call(this,1,2));
+
+    // Function.prototype.apply()与call方法类似，唯一区别是它接受数组作为函数的执行参数
+    // function f(x,y){
+    //     console.log(x+y);
+    // }
+    // f.call(null,1,1);
+    // f.apply(null,[1,1]);
+
+    //找出数组最大元素
+    // var a=[10,2,54,12,65];
+    // console.log(Math.max.apply(null,a));
+
+    //将数组的空元素变为undefined
+    // var a=['a',,'b'];
+    // function print(i){
+    //     console.log(i);
+    // }
+    // a.forEach(print);
+    // Array.apply(null,a).forEach(print);
+
+    // Function.prototype.bind()将函数体内的this绑定到某个对象，然后返回一个新函数
+    var d=new Date();
+    d.getTime();
+    //var print=d.getTime;//报错，解决办法
+    var print=d.getTime.bind(d);
+    console.log(print());
+    </script>
+    <!-- <input type="text",name="age",size=3 onchange="validate(this,18,99);"> -->
+</body>
+</html>

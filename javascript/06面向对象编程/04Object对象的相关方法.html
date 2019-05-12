@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object对象的相关方法</title>
+</head>
+
+<body>
+    <script>
+        // Object.getPrototypeOf()
+        // var F =function(){};
+        // var f=new F();
+        // console.log(Object.getPrototypeOf(f)===F.prototype); 
+
+        // Object.setPrototypeOf()
+        // var a={};
+        // var b={x:1};
+        // Object.setPrototypeOf(a,b);
+        // console.log(Object.getPrototypeOf(a)===b);
+        // console.log(a.x);
+
+        // Object.create()
+        // var A={
+        //     print:function(){
+        //         console.log('hello');
+        //     }
+        // };
+        // var B=Object.create(A);
+        // Object.getPrototypeOf(B)===A;
+        // B.print();
+        // B.print===A.print;
+
+        // var obj=Object.create({},{
+        //     p1:{
+        //         value:123,
+        //         enumerable:true,
+        //         configurable:true,
+        //         writable:true
+        //     },
+        //     p2:{
+        //         value:'123',
+        //         enumerable:true,
+        //         configurable:true,
+        //         writable:true
+        //     }
+        // });
+        //等同于
+        // var obj= Object.create({});
+        // Obj.p1=123;
+        // Obj.p2='abc';
+
+        // Object.prototype.isPrototypeOf()
+        // var o1={};
+        // var o2=Object.create(o1);
+        // var o3=Object.create(o2);
+        // console.log(o2.isPrototypeOf(o3));
+        // console.log(o1.isPrototypeOf(o3));
+
+        // Object._prototype._proto_
+        // var obj={};
+        // var p={};
+        // obj._proto_=p;
+        // Object.getPrototypeOf(obj)===p;
+
+        //获取原型对象方法的比较
+        // var obj=new Object();
+        // obj._proto_===Object.prototype;
+        // obj._proto_===obj.constructor.prototype;
+
+        //in运算符和for...in循环
+        // var o1={p1:123};
+        // var o2=Object.create(o1,{
+        //     p2:{value:"abc",enumerable:true}
+        // });
+        // for(p in o2){
+        //     console.info(p);
+        // }
+
+        //对象的拷贝
+        //确保拷贝后的对象，与原对象具有同样的原型
+        //确保拷贝后的对象，与原对象具有同样的实例属性
+        // function copyObject(orig) {
+        //     var copy = Object.create(Object.getPrototypeOf(orig));
+        //     copyOwnPropertiesFrom(copy, orig);
+        //     return copy;
+        // }
+
+        // function copyOwnPropertiesFrom(target, source) {
+        //     Object
+        //         .getOwnPropertyNames(source)
+        //         .forEach(function (propKey) {
+        //             var desc = Object.getOwnPropertyDescriptor(source, propKey);
+        //             Object.defineProperty(target, propKey, desc);
+        //         });
+        //     return target;
+        // }
+
+        //另一种拷贝
+        // function copyObject(orig) {
+        //     return Object.create(
+        //         Object.getPrototypeOf(orig),
+        //         Object.getOwnPropertyDescriptors(orig)
+        //     );
+        // }
+    </script>
+</body>
+
+</html>

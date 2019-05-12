@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>定时器</title>
+    <div id="someDiv"></div>
+    <input type="button" id="myButton" value="click">
+    <style>
+        .someDiv {
+            width: 100px;
+            heigh: 200px;
+            background-color: aquamarine;
+        }
+    </style>
+
+<body>
+    <script>
+        // setTimeout()
+        // function f() {
+        //     console.log(2);
+        // }
+        // setTimeout(f, 1000);
+
+        // var x = 1;
+
+        // var obj = {
+        //     x: 2,
+        //     y: function () {
+        //         console.log(this.x);
+        //     }
+        // };
+
+        // setTimeout(obj.y, 1000) // 1
+
+        // var x = 1;
+
+        // var obj = {
+        //     x: 2,
+        //     y: function () {
+        //         console.log(this.x);
+        //     }
+        // };
+
+        // setTimeout(function () {
+        //     obj.y();
+        // }, 1000);
+        // // 2
+
+        // setInterval()
+        // setInterval函数的用法与setTimeout完全一致，区别仅仅在于setInterval指定某个任务每隔一段时间就执行一次，也就是无限次的定时执行
+        // var i = 1
+        // var timer = setInterval(function () {
+        //     console.log(2);
+        // }, 1000)
+
+        // var div = document.getElementById('someDiv');
+        // var opacity = 1;
+        // var fader = setInterval(function () {
+        //     opacity -= 0.1;
+        //     if (opacity >= 0) {
+        //         div.style.opacity = opacity;
+        //     } else {
+        //         clearInterval(fader);
+        //     }
+        // }, 100);
+
+        // clearTimeout()，clearInterval()
+        // var id1 = setTimeout(f, 1000);
+        // var id2 = setInterval(f, 1000);
+
+        // clearTimeout(id1);
+        // clearInterval(id2);
+
+        //取消所有定时器
+        // (function () {
+        //     // 每轮事件循环检查一次
+        //     var gid = setInterval(clearAllTimeouts, 0);
+
+        //     function clearAllTimeouts() {
+        //         var id = setTimeout(function () { }, 0);
+        //         while (id > 0) {
+        //             if (id !== gid) {
+        //                 clearTimeout(id);
+        //             }
+        //             id--;
+        //         }
+        //     }
+        // })();
+
+        //实例：debounce 函数
+        // 这种做法叫做 debounce（防抖动）。假定两次 Ajax 通信的间隔不得小于2500毫秒
+        // $('textarea').on('keydown', debounce(ajaxAction, 2500));
+
+        // function debounce(fn, delay) {
+        //     var timer = null; // 声明计时器
+        //     return function () {
+        //         var context = this;
+        //         var args = arguments;
+        //         clearTimeout(timer);
+        //         timer = setTimeout(function () {
+        //             fn.apply(context, args);
+        //         }, delay);
+        //     };
+        // }
+
+        //运行机制
+        // setInterval(function () {
+        //     console.log(2);
+        // }, 1000);
+
+        // sleep(3000);
+
+        // function sleep(ms) {
+        //     var start = Date.now();
+        //     while ((Date.now() - start) < ms) {
+        //     }
+        // }
+
+        //setTimeout(f, 0)
+        // setTimeout(function(){
+        //     console.log(1);
+        // },0);
+        // console.log(2);
+
+        var input = document.getElementById('myButton');
+
+        input.onclick = function A() {
+            setTimeout(function B() {
+                input.value += ' input';
+            }, 0)
+        };
+
+        document.body.onclick = function C() {
+            input.value += ' body'
+        };
+    </script>
+</body>
+
+</html>
