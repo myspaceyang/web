@@ -10,23 +10,35 @@
 
 <body>
     <script>
-        //概述
-        // 传统写法
-        step1(function (value1) {
-            step2(value1, function (value2) {
-                step3(value2, function (value3) {
-                    step4(value3, function (value4) {
-                        // ...
-                    });
-                });
-            });
-        });
+        // //概述
+        // // 传统写法
+        // step1(function (value1) {
+        //     step2(value1, function (value2) {
+        //         step3(value2, function (value3) {
+        //             step4(value3, function (value4) {
+        //                 // ...
+        //             });
+        //         });
+        //     });
+        // });
 
-        // Promise 的写法
-        (new Promise(step1))
-            .then(step2)
-            .then(step3)
-            .then(step4);
+        // // Promise 的写法
+        // (new Promise(step1))
+        //     .then(step2)
+        //     .then(step3)
+        //     .then(step4);
+        function foo() {
+            console.log(a);   // 输出 2
+        }
+
+        function bar() {
+            let a = 3;
+            foo();
+        }
+
+        let a = 2;
+
+        bar()
     </script>
 </body>
 
