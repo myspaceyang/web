@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>全局函数</title>
+</head>
+<body>
+    <script>
+        //全局函数
+        // parseInt,parseFloat
+        document.write(parseInt('34')+'</br>');
+        document.write(parseInt('3kingfdf')+'</br>');
+        document.write(parseInt('358',8)+'</br>');
+        document.write(parseInt('358ab',16)+'</br>');
+        document.write(parseFloat('2.6')+'</br>');
+        document.write(parseFloat('123abc.56')+'</br>');
+        //isFinite,isNaN
+        document.write(isFinite(123)+'</br>');
+        document.write(isFinite(Infinity)+'</br>');
+        document.write(isNaN(null)+'</br>');
+        document.write(isNaN('tefsd')+'</br>');
+        //encodeURI,decodeURI
+        var url="http://www.baidu.com/admin/login?search=this is a test.html";
+        var res=encodeURI(url);
+        document.write(res);
+        var res1=decodeURI(res);
+        document.write('</br>'+res1+'</br>');
+        //string,number,date
+        var z=23;
+        var z=23.6
+        var z=null;
+        var z=undefined;
+        document.write(String(z));
+        document.write('</br>');
+        var z=23;
+        var z=23.6
+        var z=null;
+        var z=undefined;
+        document.write(Number(z));
+        document.write('</br>');
+        document.write(Date());
+    </script>
+</body>
+</html>

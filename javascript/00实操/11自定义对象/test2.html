@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>属性，方法</title>
+</head>
+<body>
+    <script>
+    //属性操作
+    var person={
+        name:'blue',
+        age:12,
+        salary:123456,
+        addr:'北京',
+        sex:'男'
+    };    
+    // alert(person.name);
+    // alert(person['sex']);
+    // var key='name';
+    // alert(person.key);
+    // alert(person['key']);
+    // alert(person[key]);
+    // //添加属性
+    var obj={
+        say:function(){
+            return 'say hello';
+        }
+    };
+    obj.name='king';
+    obj.age=12;
+    obj.addr='北京';
+    alert(obj.name);
+    //修改属性
+    obj.name='queen';
+    // alert(obj.name);
+    // alert(obj.addr);
+    //删除属性
+   // delete obj.addr
+    //alert(obj.addr);
+    //遍历属性
+    for(var p in obj){
+        console.log(p+'\n');
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //逻辑运算符
+    document.write(true&&false);    
+    document.write('</br>');
+    document.write(true||false);
+    document.write('</br>');
+    document.write(!true);
+    //配合if  else可以用作短路判断
+    var i=1;
+    var j=0;
+    // if(i&&j){
+    //     alert('值为真');
+    // }else{
+    //     alert('值为假');
+    // }
+    document.write('</br>');
+    if(i||j){
+        alert('值为假');
+    }else{
+        alert('值为真');
+    }
+    </script>
+</body>
+</html>

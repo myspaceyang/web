@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //打印99乘法表
+    for(var i=1;i<10;i++){
+        document.write('</br>');
+        for(var j=1;j<=i;j++){
+            document.write(j+'*'+i+'='+(i*j)+" ");
+        }
+    }
+    document.write('</br>');
+    //打印倒立的99乘法表
+    for(var i=9;i>=1;i--){
+        document.write('</br>');
+        for(var j=1;j<=i;j++){
+            document.write(j+'*'+i+'='+(i*j)+" ");
+        }
+    }
+    document.write('</br>');
+    //通过for循环百钱买百鸡，公鸡5元1只，母鸡3元1只，小鸡1元3只
+    for(var x=0;x<=20;x++){
+        for(var y=0;y<=33;y++){
+            for(var z=0;z<=100;z++){
+                if((x+y+z==100)&&(5*x+y*3+z/3==100)){
+                   document.write('公鸡'+x+'母鸡'+y+'小鸡'+z+'</br>');
+                }
+            }
+        }
+    }
+    </script>
+</body>
+</html>

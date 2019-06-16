@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>存取器描述</title>
+</head>
+<body>
+    <script>
+    //存取器描述
+    var obj={};
+    // Object.defineProperty(obj,'x',{
+    //     get :function(){
+    //         return 123;
+    //     }
+    // })
+    // console.log(obj.x);
+    obj.x=1;
+    //相当于
+    /*
+    Object.defineProperty(obj,'x',{
+        value:1,
+        writable:true,
+        enumerable:true,
+        configurable:true
+    })
+    */
+    // Object.defineProperty(obj1,'x',{
+    //     value:2
+    // })
+    //相当于
+    /*
+    Object.defineProperty(obj1,'x',{
+        value:1,
+        writable:false,
+        enumerable:false,
+        configurable:false
+    })*/
+    //_proto_指向为空
+    var obj2={
+        _proto_:null,//没有继承而来的属性
+        value:2
+    };
+
+    // var person={
+    //     name:'king',
+    //     sex:'男',
+    //     get age(){
+    //         return 12;
+    //     },
+    //     set age(val){
+    //         console.log('不能设置'+val);
+    //     }
+    // };
+    //     console.log(person.name);
+    //     console.log(person.age);
+    //     person.age=13;
+    var obj={
+        x:1,
+        y:2,
+        z:3,
+        get zhouchang(){
+            return this.x+this.y+this.z;
+        },
+        set fbzc(val){
+            this.x*=val;
+            this.y*=val;
+            this.z*=val;
+        }
+    };
+    console.log(obj.zhouchang);
+    obj.fbzc=2;
+    console.log(obj.zhouchang);
+    </script>
+</body>
+</html>

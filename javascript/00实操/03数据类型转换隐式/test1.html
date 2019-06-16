@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>隐式转换</title>
+</head>
+<body>
+    <script>
+        //转换成布尔类型
+        var a;
+        a=null;
+        a=0;
+        a=0.0;
+        a=0.1;
+        a=0/0;
+        //alert(typeof a);
+        // if(a){
+        //     alert('真');
+        // }else{
+        //     alert('假');
+        // }
+        //转换成数值类型
+        var b;
+        b=null;
+        b=true;
+        b=false;
+        b='12';
+        alert(1+b);
+        alert(2*b);
+        //转换成字符串类型
+        var c;
+        c=undefined;
+        c=32;
+        // alert('c');
+        // alert(typeof c);
+        document.write(null);
+        alert(typeof c);
+    </script>
+</body>
+</html>

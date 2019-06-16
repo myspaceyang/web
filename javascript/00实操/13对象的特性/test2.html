@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>原型</title>
+</head>
+<body>
+    <script>
+    //检测一个对象是否另一个对象的原型
+    var obj={x:1};
+    var obj1=Object.create(obj);
+    console.log(obj.isPrototypeOf(obj1));
+    console.log(Object.prototype.isPrototypeOf(obj1));
+    //_proto_代表原型属性
+    var obj1={};
+    console.log(obj.toString());
+    var arr=new Array();
+    console.log(Object.prototype.toString.call(arr));
+    </script>
+</body>
+</html>

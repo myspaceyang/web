@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>属性的特性</title>
+</head>
+<body>
+    <script>
+    //检测属性    
+    // var o={x:1};
+    // console.log('x' in o);
+    // console.log(o.hasOwnProperty('x'));
+    // //四个描述行为的特性
+    // function foo(){};
+    // foo.prototype.z=3;
+    // var obj=new foo();
+    // obj.x=1;
+    // obj.y=2;
+    // console.log(obj.propertyIsEnumerable('x'));
+    // console.log(obj.propertyIsEnumerable('z'));
+
+    // var obj={
+    //     name:'king',
+    //     age:12,
+    //     sex:'女'
+    // }
+    // for(var p in obj){
+    //     console.log(p);
+    // }
+    //console.log(Object.getOwnPropertyNames(obj));
+    //console.log(Object.keys(obj));
+    //writable   可写
+    var obj={};
+    obj.x=123;
+    obj.y=456;
+    obj.x=123.12;
+    obj.y=456.123;
+    console.log(obj.x+'\n'+obj.y);
+
+    Object.defineProperty(obj,'y',{
+        value:56,
+        writable:true,
+        enumerable:false,
+        configurable:false
+    })
+    console.log(obj.y);
+    obj.y=777;
+    console.log(obj.y);
+    for(p in obj){
+        console.log(p);
+    }
+    console.log(Object.keys(obj));
+    console.log(Object.getOwnPropertyNames(obj));
+    //Enumerable   枚举
+    
+    //configurable
+    Object.defineProperty(obj,'z',{
+        value:'this is test',
+        writable:true,
+        enumerable:true,
+        configurable:false
+    });
+    console.log(obj.z);
+    obj.z='hello';
+    console.log(obj.z);
+    //value
+
+    </script>
+</body>
+</html>

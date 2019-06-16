@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>特殊形式的函数</title>
+</head>
+<body>
+    <script>
+    //特殊形式的函数
+    function test(x,y){
+        return x+y;
+    }    
+    var test1=test;
+    alert(typeof test1);
+    alert(test1(1,2));
+    //匿名函数
+    var test2=function(x,y){
+        return(x+y);
+    }
+    alert(test2(3,5));
+    var test3=test2;
+    alert(test3(5,9));
+    //回调函数
+    function calc(x,y){
+        return x()+y();
+    }
+    function test4(){
+        return 3;
+    }
+    function test5(){
+        return 5;
+    }
+    alert(calc(test4,test5));
+    </script>
+</body>
+</html>

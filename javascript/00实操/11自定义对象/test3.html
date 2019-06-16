@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //对象的结构
+        //原型
+        var person={
+            name:'king',
+            age:12,
+            sex:'男'
+        }
+        function foo(){};
+        foo.prototype.z=3;
+        var obj=new foo();
+        obj.x=1;
+        obj.y=2;
+        console.log(obj.z);
+        console.log(obj.hasOwnProperty('x'));
+        console.log('z' in obj);
+    </script>
+</body>
+</html>

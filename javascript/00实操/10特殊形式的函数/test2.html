@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //函数参数乘以同一数值
+    function cheng(a,b,c){
+        var i,arr=[];
+        for(i=0;i<3;i++){
+            arr[i]=arguments[i]*2;
+        }
+        return arr;
+    }    
+    function jia1(a){
+        return a+1;
+    }
+    var arr1=[];
+    arr1=cheng(10,20,30);
+    alert(arr1);
+    //call()  apply()
+    function test1(a,b){
+        return a*b;
+    }
+    alert(test1.call(test1,5,8));
+    var params=[3,4];
+    alert(test1.apply(test1,params));
+    //自调函数
+    (
+        function(){
+            alert("this is test");
+        }
+    )();
+    (
+        function(x,y){
+            alert(x*y);
+        }
+    )(5,9);
+    </script>
+</body>
+</html>

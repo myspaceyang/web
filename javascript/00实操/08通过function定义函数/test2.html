@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>可变参数</title>
+</head>
+<body>
+    <script>
+        //实现默认参数的形式
+        // function calc(x,y){
+        //     x=x||0;
+        //     y=y||0;
+        //     return x+y;
+        // }
+        // alert(calc());
+        // alert(calc(1,3));
+        //通过arguments传参
+        function calc(x,y){
+           // return arguments;
+            x=arguments[0]?arguments[0]:0;
+            y=arguments[1]?arguments[1]:0;
+            return x+y;
+        }
+        alert(calc());
+        alert(calc(1,2));
+        //实现可变参数传参
+        // function test(){
+        //     var i=arguments.length;
+        //     var sum=0;
+        //     for(var x=0;x<i;++x){
+        //         sum+=arguments[x];
+        //     }
+        //     return sum;
+        // }
+        // alert(test(1,2,3));
+        // alert(test(51,5));
+        //通过可变传参找出最大值
+        function test(){
+            var x=arguments.length;
+            var max=0;
+            for(var i=0;i<=x-1;i++){
+                if(arguments[i]>max){
+                    max=arguments[i];
+                }
+            }
+            return max;
+        }
+        alert(test(1,2,3));
+        alert(test(51,5));
+    </script>
+</body>
+</html>
