@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件绑定移除</title>
+</head>
+<body>
+    <div id="box1" style="background: #ABCDEF"; width:30px; height:30px;>
+        <input type="button" value="test1" id="btn1" />
+    </div>
+    <script>
+    var btn1=document.getElementById("btn1");
+    var box1=document.getElementById("box1");
+    btn1.addEventListener('click',function(e){
+         alert('button click');
+         var e=e || window.event;
+         if(typeof e.cancelBubble=='undefined'){
+             e.stopPropagation();
+         }else{
+             e.cancelBubble=true;
+         }
+    },false);
+    box1.addEventListener('click',function(){
+         alert('div click');
+    },false);
+    </script>
+</body>
+</html>

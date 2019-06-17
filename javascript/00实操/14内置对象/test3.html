@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Error对象</title>
+</head>
+<body>
+    <script>
+    //Error对象
+    // try{
+    //   notExists();
+    // }catch(e){
+    //    alert(e.name+":"+e.message);
+    // }
+    // alert('this is a test');
+    try{
+        var n=0;
+        if(n==0){
+            throw new Error('0不能作为除数');
+        }else{
+            alert(4/n);
+        }
+    }catch(e){
+        alert(e.name+":"+e.message);
+    }finally{
+        alert('我总是被调用');
+    }
+    </script>
+</body>
+</html>

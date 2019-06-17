@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //遍历数组
+    var arr=[1,2,3,4,5];
+    for(var i=0;i<arr.length;i++){
+        console.log(arr[i]);
+    }
+    //for in
+    var arr1=[];
+    arr1[12]=2;
+    arr1[24]=54;
+    arr1[36]=89;
+    for(var i in arr1){
+        console.log(arr1[i]);
+    }
+    //for each
+    var arr2=[1,2,3,5,6];
+    arr2.forEach(function(x){
+        console.log(x);
+    })
+    </script>
+</body>
+</html>
