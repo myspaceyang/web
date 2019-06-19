@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="test1" id="btn1" />
+    <a href="http://www.baidu.com" id="bda">百度</a>
+    <script>
+    var btn1=document.getElementById("btn1");
+    // btn1.onclick=function(event){
+    //     alert(event.type);
+    // }
+    // btn1.addEventListener('click',function(e){
+    //     alert(e.type);
+    // })
+    var handler=function(e){
+        switch(e.type){
+            case 'click':
+            alert('clicked');
+            break;
+            case 'mouseover':
+            event.target.style.backgroundColor='red';
+            break;
+            case 'mouseout':
+            event.target.style.backgroundColor='';
+        }
+    };
+    btn1.onclick=handler;
+    btn1.onmouseover=handler;
+    btn1.onmouseout=handler;
+    //阻止链接跳转
+    var bda=document.getElementById('bda');
+    bda.onclick=function(e){
+        e.preventDefault();
+    }
+    </script>
+</body>
+</html>
